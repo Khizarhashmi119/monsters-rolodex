@@ -1,8 +1,14 @@
 import React from "react";
 
-import "./card.style.css";
+import { IMonster } from "../../interfaces";
 
-const Card = ({ id, name, email }) => (
+import "./Card.css";
+
+interface Props {
+  monster: IMonster;
+}
+
+const Card = ({ monster: { id, name, email } }: Props) => (
   <div className="card-container">
     <img
       src={`https://robohash.org/${id + 10}?set=set2&size=180x180`}
